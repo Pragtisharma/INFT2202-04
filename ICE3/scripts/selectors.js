@@ -22,6 +22,8 @@ function cssSelector(){
     //updating by id
     $('#list').css('font-size','40px');
     $('li:even').css('background-color',"#fcf30040") ;
+    $('li:odd').css('background-color',"#fcf30040") ;
+
 }
 function tranversingTheDOM(){
     //$('#LIST').prev().css('background-color',"2a9d8f")
@@ -34,5 +36,13 @@ function tranversingTheDOM(){
     $('#LIST').parents('body').css('font-size','24px');
 
 }
+function filtering(){
+   console.log( $('#LIST').find('li').filter(':even'));
+    $('#LIST').find('li').filter(function (i){
+        return i%2 ==0;
+    }).css('background-color',"red");
+
+}
 //cssSelectors();
-tranversingTheDOM();
+//tranversingTheDOM();
+filtering();
