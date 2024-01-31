@@ -30,13 +30,10 @@ console.log(`Class is on  ${tuesday}`);
 function square(x){
     return x*x;
 }
-let nums=new Array(1,33,22,5);
-let squaredNums=nums.map(function(value){
-    return square
-})
-console.log(`squared values: ${squaredNums}`);
 //TODO rewrite 
+//let nums=new Array(1,33,22,5);
 //let squaredNums=nums.map(function(value){
-   // return square(value);
-   //});
+ //   return square
    //using arrow functions
+   let squaredNums = nums.map(value => square(value));
+   console.log(`Squared values: ${squaredNums}`);
