@@ -26,4 +26,5 @@ function cssSelector(){
 function tranversingTheDOM(){
     $('#LIST').prev().css('background-color',"2a9d8f")
 }
-cssSelectors();
+//cssSelectors();
+tranversingTheDOM();
