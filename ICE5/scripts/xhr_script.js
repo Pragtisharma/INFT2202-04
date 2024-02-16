@@ -43,3 +43,5 @@ xhr.open('GET', url_photos, true);
  xhr.setRequestHeader('Content-type', 'application/json');
 // use the .send() method to send the request
 xhr.send();
+
+//ref:https://stackoverflow.com/questions/3230166/changing-picture-caption-with-onclick
