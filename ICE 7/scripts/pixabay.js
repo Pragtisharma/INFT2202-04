@@ -18,6 +18,7 @@ const IMAGE_COUNT = 30;
 const makePosts = () => 
 {
     // make HTML elements for posts using jQuery, same number as images retrieving
+    for (let i = 0; i < IMAGE_COUNT; i++) {
         // use bootstrap cards and append to
         // i.e. https://getbootstrap.com/docs/5.2/components/card/#about
         // create card
@@ -27,10 +28,20 @@ const makePosts = () =>
         // card title
        const title=$( <h5 class="card-title">Card title</h5>);
         // image
-        const image=$(<img src="..." class="card-img-top" alt="..."></img>);
+        const image = $(`<img src="${data.hits[i].webformatURL}" class="card-img-top" alt="${data.hits[i].tags}"></img>`);
+        
         // card text
        const text=( <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>);
+        // append elements to card body
+        body.append(title);
+        body.append(image);
+        body.append(text);
 
+        // append card body to card
+        card.append(body);
+
+        // append card to blog-column
+        $('.blog-column').append(card);
 };
 
 /**
@@ -51,4 +62,4 @@ const makePosts = () =>
 
 
  getPictures();
-makePosts();
+
