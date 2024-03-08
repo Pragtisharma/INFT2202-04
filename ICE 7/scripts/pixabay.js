@@ -21,10 +21,15 @@ const makePosts = () =>
         // use bootstrap cards and append to
         // i.e. https://getbootstrap.com/docs/5.2/components/card/#about
         // create card
+        const card = $(<div class="card" style="width: 18rem;"></div>);
         // card body 
+       const body=$( <div class="card-body"></div>);
         // card title
+       const title=$( <h5 class="card-title">Card title</h5>);
         // image
+        const image=$(<img src="..." class="card-img-top" alt="..."></img>);
         // card text
+       const text=( <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>);
 
 };
 
@@ -32,10 +37,18 @@ const makePosts = () =>
  * getPictures
  * retrieves the pictures from Pixabay API
  */
-const getPictures = () => 
-{
-    // use fetch to get the pictures from the API
-    // handle error(s) with .catch()
-};
+ // Use fetch to get the pictures from the API
+ fetch(PIXABAY_URL)
+ .then(response => response.json())
+ .then(data => {
+     // Process the data as needed
+     console.log(data);
+ })
+ .catch(error => {
+     // Handle errors
+     console.error('Error fetching pictures:', error);
+ });
 
+
+ getPictures();
 makePosts();
