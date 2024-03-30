@@ -1,0 +1,13 @@
+extends ../index
+block content 
+    h2 Welcome to users view page !! 
+    table.table-striped
+    tr 
+        th ID 
+        Th First Name 
+        Th Last Name 
+        each user in users 
+    tr 
+        td=user.userID 
+        td=user.firstName 
+        td=user.lasTName
