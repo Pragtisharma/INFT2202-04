@@ -1,6 +1,6 @@
 const express = require('express');
 const pug = require('pug');
-const user = require('./routes/userroute');
+const user = require('./routes/userroute.js');
 const app = express(); // Initialize the Express app
 
 // Setup template engine

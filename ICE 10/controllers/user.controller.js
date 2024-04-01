@@ -7,12 +7,13 @@ function loaddata(req,res){
     
     {
         res.render('',{pageTitle:"INFT:2202: USER LIST",users:userList})
+        users=userList
     })
 }
 // Function to render user view
 function userView(req, res) {
     //  render the user view here
-    res.render('./pages/user',{
+    res.render('../pages/user',{
         pageTitle:"INFT 2202- UserView"
     }); 
 }
