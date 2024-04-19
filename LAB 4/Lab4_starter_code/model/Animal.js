@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+
 
 const animalSchema = new mongoose.Schema({
     zoo: {
@@ -33,6 +35,8 @@ const animalSchema = new mongoose.Schema({
         type: Boolean,
         required: true
     }
+}, {
+    collection: 'animal'
 });
 
-module.exports = mongoose.model('Animal', animalSchema);
+module.exports = mongoose.model('animal', animalSchema);
