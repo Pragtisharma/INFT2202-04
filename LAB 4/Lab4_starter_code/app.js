@@ -12,10 +12,7 @@ app.set('view engine', 'pug');
 app.get('/', (req, res) => {
     res.render('index', { pageTitle: "INFT2202- ANIMALS" }); 
 });
-app.get('/all-animals', (req, res) => {
-    
-    res.render('./animals/all-animals');
-  });
+
   app.get('/edit-animal', (req, res) => {
     
     res.render('./animals/edit-animal');

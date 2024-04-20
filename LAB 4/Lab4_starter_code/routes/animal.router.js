@@ -1,11 +1,22 @@
 const express = require('express');
-const { animalView } = require('../controllers/animal.controller.js');
-
-// Create an Express router object
 const router = express.Router();
+const animalController = require('../controllers/animal.controller');
 
-// Define route handler for '/'
-router.get('/', animalView); 
+// GET routes
+// Route to get all animals
+router.get('/all-animals', animalController.retrieveAnimalData);
 
-// Export the router
+
+// Route to add a new animal
+router.post('/edit-animal', animalController.newAnimal);
+
+// Route to update an existing animal
+router.put('/edit-animal', animalController.updateData);
+
+// Route to delete an animal
+router.delete('/edit-animal', animalController.deleteData);
+
 module.exports = router;
+
+
+

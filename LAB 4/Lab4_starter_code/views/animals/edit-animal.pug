@@ -1,0 +1,59 @@
+
+extends ../index
+
+block content
+  // Title for the edit animal record page
+  h1 Edit Animal Record
+  
+  // Form for updating animal record
+  form(method="POST" action="/update-animal")
+    // Input field for Zoo
+    label(for="zoo") Zoo:
+    input(type="text", id="zoo", name="zoo", value=animal.zoo, required)
+    br
+    
+    // Input field for Scientific Name
+    label(for="scientificName") Scientific Name:
+    input(type="text", id="scientificName", name="scientificName", value=animal.scientificName, required)
+    br
+    
+    // Input field for Common Name
+    label(for="commonName") Common Name:
+    input(type="text", id="commonName", name="commonName", value=animal.commonName, required)
+    br
+    
+    // Input field for Given Name
+    label(for="givenName") Given Name:
+    input(type="text", id="givenName", name="givenName", value=animal.givenName, required)
+    br
+    
+    // Dropdown for Gender
+    label(for="gender") Gender:
+    select(id="gender", name="gender", required)
+      option(value="male", selected=animal.gender === 'male') Male
+      option(value="female", selected=animal.gender === 'female') Female
+    br
+    
+    // Input field for Date of Birth
+    label(for="dateOfBirth") Date of Birth:
+    input(type="date", id="dateOfBirth", name="dateOfBirth", value=animal.dateOfBirth.toISOString().substr(0, 10), required)
+    br
+    
+    // Input field for Age
+    label(for="age") Age:
+    input(type="number", id="age", name="age", value=animal.age, required)
+    br
+    
+    // Checkbox for Transportable
+    label(for="isTransportable") Transportable:
+    input(type="checkbox", id="isTransportable", name="isTransportable", checked=animal.isTransportable)
+    br
+    
+    // Button to submit the form for updating animal record
+    button(type="submit") Update Animal Record
+
+  // Form for deleting animal record
+  form(method="POST" action="/delete-animal")
+    // Button to submit the form for deleting animal record
+    button(type="submit") Delete Animal Record
+

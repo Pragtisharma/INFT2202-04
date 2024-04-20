@@ -1,7 +1,14 @@
 const mongoose = require("mongoose");
+
+// Set Mongoose Promise to global Promise
 mongoose.Promise = global.Promise;
 
+// Connect to MongoDB
+mongoose.connect("mongodb://localhost:27017/INFT2202", { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("Connected to MongoDB"))
+    .catch(error => console.error("MongoDB connection error:", error));
 
+// Define Animal Schema
 const animalSchema = new mongoose.Schema({
     zoo: {
         type: String,
@@ -36,7 +43,8 @@ const animalSchema = new mongoose.Schema({
         required: true
     }
 }, {
-    collection: 'animal'
+    collection: 'animal' // Define collection name explicitly as 'animal'
 });
 
+// Export Animal model
 module.exports = mongoose.model('animal', animalSchema);

@@ -1,0 +1,38 @@
+extends ../index
+
+block content
+  // Display error message if present
+  if errorMessage
+    .alert.alert-danger= errorMessage
+
+  // Display title
+  h1 All Animals
+
+  // Iterate over each animal and display its details
+  each animal in animals
+    .card.mb-3
+      .card-body
+        // Display common name
+        h5.card-title= animal.commonName
+        
+        // Display scientific name
+        p.card-text= `Scientific Name: ${animal.scientificName}`
+        
+        // Display given name
+        p.card-text= `Given Name: ${animal.givenName}`
+        
+        // Display gender
+        p.card-text= `Gender: ${animal.gender}`
+        
+        // Display date of birth
+        p.card-text= `Date of Birth: ${animal.dateOfBirth}`
+        
+        // Display age
+        p.card-text= `Age: ${animal.age}`
+        
+        // Display transportability
+        p.card-text= `Transportable: ${animal.isTransportable ? 'Yes' : 'No'}`
+        
+        // Link to edit animal page
+        a.btn.btn-primary(href=`/edit-animal/${animal._id}`) Edit
+
