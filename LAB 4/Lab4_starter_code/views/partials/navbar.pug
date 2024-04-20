@@ -1,4 +1,4 @@
-nav.navbar.navbar-expand-lg.bg-body-tertiary
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
   .container-fluid
     a.navbar-brand(href='#') Animal Database
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
@@ -6,6 +6,11 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
     #navbarSupportedContent.collapse.navbar-collapse
       ul.navbar-nav.me-auto.mb-2.mb-lg-0
         li.nav-item
-          a.nav-link.active(aria-current='page' href='/') Home        
+          a.nav-link(href='/') Home
         li.nav-item
-          a.nav-link.active(aria-current='page' href='/animals/all-animals') Animals
+          a.nav-link(href='/all-animals') Animals
+        li.nav-item
+          a.nav-link(href='/entry-form') Entry Form
+        li.nav-item
+          a.nav-link(href='/edit-animal') Edit Animal 
+  

@@ -1,0 +1,45 @@
+extends ../index
+
+block content
+  if errorMessage
+    .alert.alert-danger= errorMessage
+
+  form(method="POST" action="/add-animal")
+    label.form-label(for="zoo") Home Zoo:
+    input(type="text" id="zoo" name="zoo" required)
+    br
+
+    label.form-label(for="scientificName") Scientific Name:
+    input.form-control(type="text" id="scientificName" name="scientificName" required)
+    br
+
+    label.form-label(for="commonName") Common Name:
+    input.form-control(type="text" id="commonName" name="commonName" required)
+    br
+
+    label.form-label(for="givenName") Given Name:
+    input.form-control(type="text" id="givenName" name="givenName" required)
+    br
+
+    label.form-label(for="gender") Gender:
+    select(id="gender" name="gender" required)
+      option(value="male") Male
+      option(value="female") Female
+    br
+
+    label.form-label(for="dateOfBirth") Date of Birth:
+    input.form-control(type="date" id="dateOfBirth" name="dateOfBirth" required)
+    br
+
+    label.form-label(for="age") Age:
+    input.form-control(type="number" id="age" name="age" required)
+    br
+
+    label.form-label(for="isTransportable") Transportable:
+    select(id="istransportable" name="istransportable" required)
+      option(value="Available") Available
+      option(value="Unavailable") Inavailable
+    br
+
+    button(type="Add animal") Add Animal
+    button(type="reset") Reset
