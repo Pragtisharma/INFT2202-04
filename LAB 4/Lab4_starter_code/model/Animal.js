@@ -10,6 +10,7 @@ mongoose.connect("mongodb://localhost:27017/INFT2202", { useNewUrlParser: true, 
 
 // Define Animal Schema
 const animalSchema = new mongoose.Schema({
+    
     zoo: {
         type: String,
         required: true
@@ -43,7 +44,7 @@ const animalSchema = new mongoose.Schema({
         required: true
     }
 }, {
-    collection: 'animal' // Define collection name explicitly as 'animal'
+    collection: 'animal'
 });
 
 // Export Animal model

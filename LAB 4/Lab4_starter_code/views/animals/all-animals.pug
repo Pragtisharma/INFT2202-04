@@ -8,15 +8,23 @@ block content
   // Display title
   h1 All Animals
 
+  
+
   // Iterate over each animal and display its details
   each animal in animals
     .card.mb-3
       .card-body
-        // Display common name
-        h5.card-title= animal.commonName
+        // Display animal id
+        h5.card-title= animal._id
+        //Display animal zoo
+        p.card-text= `ZOO: ${animal.zoo}`
         
         // Display scientific name
         p.card-text= `Scientific Name: ${animal.scientificName}`
+
+         // Display common name
+        p.card-text= `Common Name: ${animal.commonName}`
+        
         
         // Display given name
         p.card-text= `Given Name: ${animal.givenName}`
@@ -33,6 +41,4 @@ block content
         // Display transportability
         p.card-text= `Transportable: ${animal.isTransportable ? 'Yes' : 'No'}`
         
-        // Link to edit animal page
-        a.btn.btn-primary(href=`/edit-animal/${animal._id}`) Edit
-
+     
